@@ -220,7 +220,7 @@ const setIco = () => { const f = DATA.profile && DATA.profile.favicon; if (!f) r
 function render(){
   setIco();
   document.querySelectorAll('.pill').forEach(b => b.classList.toggle('on', b.dataset.k === tab));
-  const q = Q.toLowerCase(), all = DATA.items.filter(i => i.tab === tab).sort((a,b)=>(b.at||0)-(a.at||0));
+  const q = Q.toLowerCase(), all = DATA.items.filter(i => i.tab === tab).sort((a,b)=>tab==='lora' ? (a.at||0)-(b.at||0) : (b.at||0)-(a.at||0));
   const list = all.filter(p => !q || [p.name,p.title,p.note,p.body,(p.tags||[]).join(' ')].join(' ').toLowerCase().includes(q));
   const size = tab==='asset' ? 24 : 20, pages = Math.max(1, Math.ceil(list.length/size)); PG = Math.min(PG, pages);
   const cur = list.slice((PG-1)*size, PG*size);
