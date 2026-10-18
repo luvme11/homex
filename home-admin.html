@@ -144,13 +144,12 @@ const F = id => $('#'+id).value.trim();
 function writeModal(it){
   const e = it || {tab}, k = e.tab;
   if (k === 'lora') modal(it?'로라 수정':'로라 올리기', `
-    <label>로라 이름</label><input id="fName" value="${esc(e.name)}" placeholder="예: 안경 소녀 LoRA">
-    ${[0,1,2].map(i => { const c = (e.links && e.links.length ? e.links : (e.url||e.weight ? [{url:e.url, weight:e.weight}] : []))[i] || {}; return `<label>로라 ${i+1}${i?' (선택)':''} · Pix AI 링크</label><input id="fU${i}" value="${esc(c.url)}" placeholder="https://pixai.art/model/…"><div style="display:flex;gap:6px;margin-top:6px"><input id="fL${i}" value="${esc(c.label)}" placeholder="이름 (선택)"><input id="fW${i}" value="${esc(c.weight)}" placeholder="비중 예: 0.7" style="width:130px;flex:none"></div>`; }).join('')}
+    <label>이름 (선택 · 비우면 #번호로 표시)</label><input id="fName" value="${esc(e.name)}" placeholder="비워도 돼요">
+    ${[0,1,2].map(i => { const c = (e.links && e.links.length ? e.links : (e.url||e.weight ? [{url:e.url, weight:e.weight}] : []))[i] || {}; return `<label>로라 ${i+1}${i?' (선택)':''} · Pix AI 링크</label><input id="fU${i}" value="${esc(c.url)}" placeholder="https://pixai.art/model/…"><div style="display:flex;gap:6px;margin-top:6px"><input id="fL${i}" value="${esc(c.label)}" placeholder="버튼 이름 예: 메인"><input id="fW${i}" value="${esc(c.weight)}" placeholder="비중 예: 0.7" style="width:130px;flex:none"></div>`; }).join('')}
     <label>트리거 단어 (선택)</label><input id="fTr" value="${esc(e.trigger)}" placeholder="예: glasses_girl">
     <label>메모 (선택)</label><textarea id="fNote" placeholder="추천 모델, 샘플러, 주의점 등  ·  ==글자==는 형광펜">${esc(e.note)}</textarea>
     <label>태그 (쉼표로 구분)</label><input id="fTags" value="${esc((e.tags||[]).join(', '))}" placeholder="캐릭터, 의상, 스타일">
     <label>대표 이미지 (선택)</label><input type="file" id="fImg" accept="image/*"><div class="pv"></div>`, async () => {
-    if (!F('fName')) throw new Error('로라 이름을 적어 주세요');
     const f = $('#fImg').files_data[0]; let path = e.img || '';
     if (f){ const id = e.id || uid(); path = `img/lora-${id}.jpg`; await putImg(path, await resize(f, 800)); }
     const v = {tab:'lora', name:F('fName'), links:[0,1,2].map(i => ({label:F('fL'+i), url:F('fU'+i), weight:F('fW'+i)})).filter(c => c.url || c.weight), url:'', weight:'', trigger:F('fTr'), note:$('#fNote').value.trim(), tags:F('fTags').split(',').map(s=>s.trim()).filter(Boolean), img:path};
@@ -227,7 +226,7 @@ function render(){
   const sub = p => p.tab==='lora' ? (() => { const cs = p.links && p.links.length ? p.links : (p.url||p.weight ? [{weight:p.weight}] : []); return cs.length ? cs.map(c => c.weight||'-').join(' / ') + ' · 링크 ' + cs.length + '개' : '링크 없음'; })() : (p.body||'').slice(0,60);
   $('#list').innerHTML = !list.length ? `<div class="empty">${ready() ? (all.length ? '검색 결과가 없어요' : '아직 없어요 — 오른쪽 위 "+ 올리기"를 눌러 보세요') : '먼저 "연결 설정"에서 GitHub를 연결해 주세요'}</div>`
    : tab==='asset' ? `<div class="gd">${cur.map(p=>`<div class="ac"><div class="th">${img(p)}</div><div class="cap">${esc(p.name||'')}${(p.imgs&&p.imgs.length>1)?' · '+p.imgs.length+'장':''}${p.hidden?' · 비공개':''}</div><div class="rb">${btns(p)}</div></div>`).join('')}</div>`
-   : cur.map(p=>`<div class="row"><div class="th">${img(p)}</div><div class="tx"><b>${esc(p.name||p.title)}</b><small>${esc(sub(p))}</small></div><div class="rb">${btns(p)}</div></div>`).join('');
+   : cur.map(p=>`<div class="row"><div class="th">${img(p)}</div><div class="tx"><b>${esc(p.name||p.title||'(이름 없음)')}</b><small>${esc(sub(p))}</small></div><div class="rb">${btns(p)}</div></div>`).join('');
   $('#pg').innerHTML = pages<2 ? '' : `<div class="pgn">${Array.from({length:pages},(_,i)=>`<button data-p="${i+1}" class="${i+1===PG?'on':''}">${i+1}</button>`).join('')}</div>`;
 }
 document.querySelector('.tb').onclick = e => { const b = e.target.closest('.pill'); if (b){ tab = b.dataset.k; PG = 1; render(); } };
