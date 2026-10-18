@@ -1,6 +1,6 @@
 window.HOME_DATA = {
  "profile": {
-  "favicon": "img/favicon.jpg?v=1792342277917",
+  "favicon": "img/favicon.jpg?v=1792342689549",
   "title": "My\nHome",
   "sub": "LORA · BOARD · ASSETS",
   "name": "U2",
@@ -10,5 +10,5 @@ window.HOME_DATA = {
   "avatar": "img/avatar.jpg?v=1792342276183"
  },
  "items": [],
- "updatedAt": 1792342527932
+ "updatedAt": 1792342691508
 };
