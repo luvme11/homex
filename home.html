@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My Home</title>
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{--ink:#2a2a2a}
@@ -52,7 +53,8 @@ main{display:grid;grid-template-columns:250px minmax(0,1fr);gap:64px;width:min(1
 .cb{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
 .cb .cp{flex:1 1 56px;min-width:0;height:26px;padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:24px;text-align:center}
 .cb .cp.no{color:#bbb;pointer-events:none}
-.gd.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gd.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gd.g2 .tl{aspect-ratio:16/9}
 .lt{position:absolute;bottom:42px;left:50%;transform:translateX(-50%);width:min(560px,90vw);font-size:12px;line-height:1.6;color:#eee;text-align:center;white-space:pre-wrap;word-break:break-word;display:none}
 .dt{font-size:8px;letter-spacing:.2em;color:#999;margin:8px 0 0 33px}
 .empty{font-size:11px;color:#aaa;padding:30px 0;text-align:center}
@@ -81,7 +83,7 @@ mark{background:#e6e6e6;color:inherit;border-radius:3px;padding:1px 3px}
   body{padding:30px 0}main{grid-template-columns:1fr;gap:26px;width:calc(100vw - 32px)}
   .card{height:auto}.body{overflow:visible}.sh i{display:none}
   .ab,.st,.chips,.ft,.tx,.dt{margin-left:0}.it img.th{margin-left:0;width:100%}
-  .pg-title{font-size:32px}.heart{right:20px}.gd,.gd.g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pg-title{font-size:32px}.heart{right:20px}.gd{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
 </head>
@@ -110,7 +112,7 @@ const hl = s => esc(s).replace(/==(.+?)==/g, '<mark>$1</mark>');
 const D = window.HOME_DATA || {}, ITEMS = D.items || [];
 const P = Object.assign({title:'My\nHome',sub:'LORA · BOARD · ASSETS',name:'',handle:'',avatar:'',text:'',tags:[]}, D.profile || {});
 const TABS = [{k:'intro',label:'소개'},{k:'lora',label:'로라'},{k:'post',label:'게시판'},{k:'asset',label:'에셋',grid:1}];
-const SIZE = {lora:9, post:6, asset:12};
+const SIZE = {lora:99999, post:6, asset:12};
 /* 관리자(토큰이 저장된 브라우저)만 비공개 에셋을 볼 수 있음 */
 const OWNER = (() => { try{ const g = JSON.parse(localStorage.getItem('home_gh') || '{}'); return !!(g.owner && g.repo && g.token); }catch(e){ return false; } })();
 const NUM = {}; ITEMS.filter(i=>i.tab==='lora').sort((a,b)=>(a.at||0)-(b.at||0)).forEach((p,i)=>NUM[p.id]=i+1);
@@ -120,7 +122,7 @@ $('#title').innerHTML = P.title.split('\n').map(esc).join('<br>');
 $('#sub').textContent = P.sub; $('#nm').textContent = P.name; $('#hd').textContent = P.handle;
 if (P.avatar) $('#av').innerHTML = `<img src="${esc(P.avatar)}" alt="">`;
 document.title = P.title.replace('\n',' ');
-if (P.favicon){ let l = document.querySelector('link[rel~=icon]'); if (!l){ l = document.createElement('link'); l.rel = 'icon'; document.head.appendChild(l); } l.href = P.favicon; }
+if (P.favicon){ let l = document.querySelector('link[rel~=icon]'); if (!l){ l = document.createElement('link'); l.rel = 'icon'; document.head.appendChild(l); } l.type = 'image/png'; l.href = P.favicon; }
 const fmt = t => { const d = new Date(t||0); return isNaN(d)||!t ? '' : d.getFullYear()+'.'+pad(d.getMonth()+1)+'.'+pad(d.getDate()); };
 
 function pager(pg, pages){
@@ -158,7 +160,7 @@ function render(){
   PG = Math.min(PG, pages);
   const off = (PG-1)*size, cur = list.slice(off, off+size);
   $('#rc').textContent = list.length + ' / ' + all.length;
-  const html = t.k==='lora' ? `<div class="gd g3">${cur.map(loraTile).join('')}</div>`
+  const html = t.k==='lora' ? `<div class="gd g2">${cur.map(loraTile).join('')}</div>`
     : t.k==='post' ? cur.map((p,i)=>postRow(p, list.length-off-i)).join('')
     : `<div class="gd">${cur.map(tile).join('')}</div>`;
   $('#body').innerHTML = !list.length ? '<div class="empty">'+(all.length?'검색 결과가 없어요':'아직 올린 게 없어요')+'</div>' : html + pager(PG, pages);
