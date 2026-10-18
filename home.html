@@ -49,11 +49,11 @@ main{display:grid;grid-template-columns:250px minmax(0,1fr);gap:64px;width:min(1
 .cp{height:26px;padding:0 13px;border:1px solid #ddd;border-radius:13px;font-size:9.5px;font-weight:700;color:#555;display:inline-grid;place-items:center;text-decoration:none}
 .cp:hover{border-color:#2a2a2a;color:#111}.cp.dk{background:#2a2a2a;border-color:#2a2a2a;color:#fff}
 .tx{margin:14px 0 0 33px;padding:12px 16px;background:#2a2a2a;color:#eee;border-radius:14px;font-size:11.5px;line-height:1.6;white-space:pre-wrap;word-break:break-word}
-.cb{margin:14px 0 0 33px;display:flex;flex-direction:column;gap:8px}
-.cr{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid #e6e6e6;border-radius:14px;flex-wrap:wrap}
-.cn{font-size:8.5px;font-weight:700;color:#999}.ci{flex:1;min-width:90px}
-.ci small{display:block;font-size:8px;font-weight:700;letter-spacing:.15em;color:#777;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ci b{font-size:18px;font-weight:800;word-break:break-all}
+.cb{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.cb .cp{flex:1 1 56px;min-width:0;height:26px;padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:24px;text-align:center}
+.cb .cp.no{color:#bbb;pointer-events:none}
+.gd.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lt{position:absolute;bottom:42px;left:50%;transform:translateX(-50%);width:min(560px,90vw);font-size:12px;line-height:1.6;color:#eee;text-align:center;white-space:pre-wrap;word-break:break-word;display:none}
 .dt{font-size:8px;letter-spacing:.2em;color:#999;margin:8px 0 0 33px}
 .empty{font-size:11px;color:#aaa;padding:30px 0;text-align:center}
 mark{background:#e6e6e6;color:inherit;border-radius:3px;padding:1px 3px}
@@ -70,7 +70,7 @@ mark{background:#e6e6e6;color:inherit;border-radius:3px;padding:1px 3px}
 .pgn button:hover:not(:disabled){background:#f0f0f0;color:#111}.pgn button.on{background:#2a2a2a;color:#fff}.pgn button:disabled{opacity:.25;cursor:default}
 .heart{position:fixed;top:22px;right:38px;font-size:15px;color:#b9b9b9;text-decoration:none}.heart:hover{color:#666}
 .lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;place-items:center;z-index:50;padding:20px 60px}.lb.on{display:grid}
-.lb img{max-width:100%;max-height:calc(100vh - 80px);border-radius:10px;user-select:none;-webkit-user-drag:none}
+.lb img{max-width:100%;max-height:calc(100vh - 140px);border-radius:10px;user-select:none;-webkit-user-drag:none}
 .ar{position:absolute;top:50%;width:40px;height:40px;margin-top:-20px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:20px;line-height:1}.ar:hover{background:rgba(255,255,255,.3)}
 .ar.l{left:12px}.ar.r{right:12px}
 .lc{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:10px;font-weight:700;letter-spacing:.2em;color:#ddd}
@@ -80,8 +80,8 @@ mark{background:#e6e6e6;color:inherit;border-radius:3px;padding:1px 3px}
 @media (max-width:1000px){
   body{padding:30px 0}main{grid-template-columns:1fr;gap:26px;width:calc(100vw - 32px)}
   .card{height:auto}.body{overflow:visible}.sh i{display:none}
-  .ab,.st,.chips,.ft,.tx,.dt,.cb{margin-left:0}.it img.th{margin-left:0;width:100%}
-  .pg-title{font-size:32px}.heart{right:20px}.gd{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ab,.st,.chips,.ft,.tx,.dt{margin-left:0}.it img.th{margin-left:0;width:100%}
+  .pg-title{font-size:32px}.heart{right:20px}.gd,.gd.g3{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
 </head>
@@ -100,7 +100,7 @@ mark{background:#e6e6e6;color:inherit;border-radius:3px;padding:1px 3px}
     <div class="card" id="card"><div class="sr"><input id="q" placeholder="이름·태그 검색"><small id="rc"></small></div><div class="body" id="body"></div></div>
   </section>
 </main>
-<div class="lb" id="lb"><button class="ar l" id="lp">‹</button><img alt=""><button class="ar r" id="ln">›</button><div class="lc" id="lc"></div></div>
+<div class="lb" id="lb"><button class="ar l" id="lp">‹</button><img alt=""><button class="ar r" id="ln">›</button><div class="lt" id="lt"></div><div class="lc" id="lc"></div></div>
 
 <script>document.write('<script src="home-data.js?t='+Date.now()+'"><\/script>')</script>
 <script>
@@ -110,9 +110,10 @@ const hl = s => esc(s).replace(/==(.+?)==/g, '<mark>$1</mark>');
 const D = window.HOME_DATA || {}, ITEMS = D.items || [];
 const P = Object.assign({title:'My\nHome',sub:'LORA · BOARD · ASSETS',name:'',handle:'',avatar:'',text:'',tags:[]}, D.profile || {});
 const TABS = [{k:'intro',label:'소개'},{k:'lora',label:'로라'},{k:'post',label:'게시판'},{k:'asset',label:'에셋',grid:1}];
-const SIZE = {lora:6, post:6, asset:12};
+const SIZE = {lora:9, post:6, asset:12};
 /* 관리자(토큰이 저장된 브라우저)만 비공개 에셋을 볼 수 있음 */
 const OWNER = (() => { try{ const g = JSON.parse(localStorage.getItem('home_gh') || '{}'); return !!(g.owner && g.repo && g.token); }catch(e){ return false; } })();
+const NUM = {}; ITEMS.filter(i=>i.tab==='lora').sort((a,b)=>(a.at||0)-(b.at||0)).forEach((p,i)=>NUM[p.id]=i+1);
 const imgsOf = p => p.imgs && p.imgs.length ? p.imgs : (p.img ? [p.img] : []);
 let T = 0, Q = '', PG = 1;
 $('#title').innerHTML = P.title.split('\n').map(esc).join('<br>');
@@ -130,13 +131,9 @@ function pager(pg, pages){
 }
 const sortNew = a => a.slice().sort((x,y) => (y.at||0) - (x.at||0));
 const combosOf = p => p.links && p.links.length ? p.links : (p.url||p.weight ? [{url:p.url,weight:p.weight}] : []);
-const loraRow = (p,n) => `<div class="it"><div class="sh"><em>${pad(n)}</em><h3>${hl(p.name||'이름 없음')}</h3><i></i><span>LORA</span></div>
-  ${p.img?`<img class="th" src="${esc(p.img)}" style="object-position:${esc(p.pos||'50% 50%')}" loading="lazy" alt="" onerror="this.remove()">`:''}
-  <div class="cb">${combosOf(p).map((c,i)=>`<div class="cr"><span class="cn">${pad(i+1)}</span><div class="ci"><small>${esc(c.label||'LORA '+(i+1))} · WEIGHT</small><b>${esc(c.weight||'-')}</b></div>${c.url?`<a class="cp dk" href="${esc(c.url)}" target="_blank" rel="noopener">Pix AI ↗</a>`:''}<button class="cp" data-copy="${esc(c.weight||'')}">비중 복사</button></div>`).join('')}</div>
-  ${p.trigger?`<div class="st"><div><small>TRIGGER</small><b style="font-size:13px;line-height:1.5">${esc(p.trigger)}</b></div></div>`:''}
-  ${p.note?`<div class="ab">${hl(p.note)}</div>`:''}
-  ${(p.tags||[]).length?`<div class="chips">${p.tags.map(g=>`<span class="tg">${esc(g)}</span>`).join('')}</div>`:''}
-  ${p.trigger?`<div class="ft"><button class="cp" data-copy="${esc(p.trigger)}">트리거 복사</button></div>`:''}</div>`;
+const loraTile = p => { const cs = combosOf(p);
+  return `<div><div class="tl" data-l="${esc(p.id)}">${p.img?`<img src="${esc(p.img)}" style="object-position:${esc(p.pos||'50% 50%')}" loading="lazy" alt="" onerror="this.remove()">`:''}</div><div class="cap">${p.name?hl(p.name):'#'+NUM[p.id]}</div><div class="cb">${cs.map((c,i)=>{ const t = [c.label, c.weight].filter(Boolean).join(' ') || 'LORA '+(i+1);
+    return c.url ? `<a class="cp" href="${esc(c.url)}" target="_blank" rel="noopener">${esc(t)}</a>` : `<span class="cp no">${esc(t)}</span>`; }).join('')}</div></div>`; };
 const postRow = (p,n) => `<div class="it"><div class="sh"><em>${pad(n)}</em><h3>${hl(p.title||'제목 없음')}</h3><i></i><span>POST</span></div>
   <div class="dt">${fmt(p.at)}</div>
   ${p.img?`<img class="th" src="${esc(p.img)}" loading="lazy" alt="" onerror="this.remove()">`:''}
@@ -156,12 +153,12 @@ function render(){
     return;
   }
   const q = Q.toLowerCase(), all = sortNew(ITEMS.filter(i=>i.tab===t.k && (OWNER || !i.hidden)));
-  const list = all.filter(p => !q || [p.name,p.title,p.note,p.body,p.trigger,(p.tags||[]).join(' ')].join(' ').toLowerCase().includes(q));
+  const list = all.filter(p => !q || (('#'+(NUM[p.id]||''))+' '+[p.name,p.title,p.note,p.body,p.trigger,(p.tags||[]).join(' ')].join(' ')).toLowerCase().includes(q));
   const size = SIZE[t.k], pages = Math.max(1, Math.ceil(list.length/size));
   PG = Math.min(PG, pages);
   const off = (PG-1)*size, cur = list.slice(off, off+size);
   $('#rc').textContent = list.length + ' / ' + all.length;
-  const html = t.k==='lora' ? cur.map((p,i)=>loraRow(p, list.length-off-i)).join('')
+  const html = t.k==='lora' ? `<div class="gd g3">${cur.map(loraTile).join('')}</div>`
     : t.k==='post' ? cur.map((p,i)=>postRow(p, list.length-off-i)).join('')
     : `<div class="gd">${cur.map(tile).join('')}</div>`;
   $('#body').innerHTML = !list.length ? '<div class="empty">'+(all.length?'검색 결과가 없어요':'아직 올린 게 없어요')+'</div>' : html + pager(PG, pages);
@@ -174,6 +171,8 @@ $('#q').oninput = e => { Q = e.target.value.trim(); PG = 1; render(); };
 $('#body').onclick = async e => {
   const p = e.target.closest('[data-p]');
   if (p && !p.disabled){ PG = +p.dataset.p; render(); $('#body').scrollTop = 0; window.scrollTo(0,0); return; }
+  const l = e.target.closest('[data-l]');
+  if (l){ const it = ITEMS.find(x => x.id === l.dataset.l); if (it && it.img) openLb([it.img], 0, [it.trigger?'TRIGGER  '+it.trigger:'', it.note||''].filter(Boolean).join('\n\n')); return; }
   const z = e.target.closest('[data-s]');
   if (z){ const it = ITEMS.find(x => x.id === z.dataset.s); if (it) openLb(imgsOf(it), 0); return; }
   const im = e.target.closest('img.th'); if (im){ openLb([im.src], 0); return; }
@@ -181,9 +180,9 @@ $('#body').onclick = async e => {
   await copy(c.dataset.copy); const o = c.textContent; c.textContent = '복사됨 ✓'; setTimeout(()=>c.textContent = o, 1200);
 };
 /* 슬라이드 뷰어: 화살표 · 키보드 · 스와이프 */
-let G = [], GI = 0, TX = null;
-function showLb(){ $('#lb img').src = G[GI]; $('#lc').textContent = G.length > 1 ? pad(GI+1) + ' / ' + pad(G.length) : ''; $('#lp').style.display = $('#ln').style.display = G.length > 1 ? '' : 'none'; }
-function openLb(a, i){ G = a; GI = i; showLb(); $('#lb').classList.add('on'); }
+let G = [], GI = 0, TX = null, CAP = '';
+function showLb(){ $('#lt').textContent = CAP; $('#lt').style.display = CAP ? 'block' : 'none'; $('#lb img').src = G[GI]; $('#lc').textContent = G.length > 1 ? pad(GI+1) + ' / ' + pad(G.length) : ''; $('#lp').style.display = $('#ln').style.display = G.length > 1 ? '' : 'none'; }
+function openLb(a, i, cap){ G = a; GI = i; CAP = cap || ''; showLb(); $('#lb').classList.add('on'); }
 const go = d => { if (G.length > 1){ GI = (GI + d + G.length) % G.length; showLb(); } };
 $('#lb').onclick = () => $('#lb').classList.remove('on');
 $('#lp').onclick = e => { e.stopPropagation(); go(-1); }; $('#ln').onclick = e => { e.stopPropagation(); go(1); };
