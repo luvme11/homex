@@ -112,7 +112,7 @@ const P = Object.assign({title:'My\nHome',sub:'LORA · BOARD · ASSETS',name:'',
 const TABS = [{k:'intro',label:'소개'},{k:'lora',label:'로라'},{k:'post',label:'게시판'},{k:'asset',label:'에셋',grid:1}];
 const SIZE = {lora:6, post:6, asset:12};
 /* 관리자(토큰이 저장된 브라우저)만 비공개 에셋을 볼 수 있음 */
-const OWNER = (() => { try{ const g = JSON.parse(localStorage.getItem('pa_gh') || '{}'); return !!(g.owner && g.repo && g.token); }catch(e){ return false; } })();
+const OWNER = (() => { try{ const g = JSON.parse(localStorage.getItem('home_gh') || '{}'); return !!(g.owner && g.repo && g.token); }catch(e){ return false; } })();
 const imgsOf = p => p.imgs && p.imgs.length ? p.imgs : (p.img ? [p.img] : []);
 let T = 0, Q = '', PG = 1;
 $('#title').innerHTML = P.title.split('\n').map(esc).join('<br>');
