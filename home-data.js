@@ -17,17 +17,17 @@ window.HOME_DATA = {
    "name": "1",
    "links": [
     {
-     "label": ".",
+     "label": "1.2",
      "url": "https://pixai.art/ko/model/2056269388769777580/2056275405896791794",
-     "weight": "1.2"
+     "weight": ""
     },
     {
-     "label": "Textured Painterly",
+     "label": "1.0",
      "url": "https://pixai.art/ko/model/2050779893027593883/2050822937141372931",
-     "weight": "1.0"
+     "weight": ""
     },
     {
-     "label": "Caramel style",
+     "label": "0.6",
      "url": "https://pixai.art/ko/model/2019812639073060605/2019823560092066559",
      "weight": "0.6"
     }
@@ -40,5 +40,5 @@ window.HOME_DATA = {
    "img": "img/lora-mve3lpowilhg.jpg"
   }
  ],
- "updatedAt": 1792344443287
+ "updatedAt": 1792344796590
 };
