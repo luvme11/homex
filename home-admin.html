@@ -67,8 +67,8 @@ h1{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
 const $ = s => document.querySelector(s);
 const esc = s => String(s==null?'':s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const NAMES = {lora:'로라', post:'게시판', asset:'에셋'}, FILE = 'home-data.js';
-/* prompts 사이트와 같은 키(pa_gh)를 써서 같은 브라우저면 연결 설정이 그대로 이어져요 */
-const LS = () => { try{ return JSON.parse(localStorage.getItem('pa_gh') || '{}'); }catch(e){ return {}; } };
+/* 프롬프트 사이트(pa_gh)와 겹치지 않게 홈 전용 키(home_gh)를 사용 */
+const LS = () => { try{ return JSON.parse(localStorage.getItem('home_gh') || '{}'); }catch(e){ return {}; } };
 const ready = () => { const g = LS(); return !!(g.owner && g.repo && g.token); };
 const br = () => LS().branch || 'main';
 const hdr = () => ({Authorization:'Bearer '+LS().token, Accept:'application/vnd.github+json', 'Content-Type':'application/json'});
@@ -210,7 +210,7 @@ function setModal(){
     <label>GitHub 사용자명</label><input id="gO" value="${esc(g.owner)}"><label>저장소 이름</label><input id="gR" value="${esc(g.repo)}">
     <label>브랜치</label><input id="gB" value="${esc(g.branch||'main')}"><label>토큰 (Contents 읽기/쓰기 권한)</label><input type="password" id="gT" value="${esc(g.token)}" placeholder="github_pat_…">
     <p class="hint">이 브라우저에만 저장돼요. 토큰이 있는 브라우저만 올릴 수 있어요.</p>`, async () => {
-    localStorage.setItem('pa_gh', JSON.stringify({owner:F('gO'), repo:F('gR'), branch:F('gB')||'main', token:F('gT')}));
+    localStorage.setItem('home_gh', JSON.stringify({owner:F('gO'), repo:F('gR'), branch:F('gB')||'main', token:F('gT')}));
     await pull();
   });
 }
