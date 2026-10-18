@@ -195,12 +195,15 @@ function proModal(){
     <label>이름</label><input id="pN" value="${esc(p.name)}"><label>핸들</label><input id="pH" value="${esc(p.handle)}">
     <label>소개글  ·  ==글자==는 형광펜</label><textarea id="pX">${esc(p.text)}</textarea>
     <label>태그 (쉼표로 구분)</label><input id="pG" value="${esc((p.tags||[]).join(', '))}">
-    <label>프로필 사진 (선택)</label><input type="file" id="fAv" accept="image/*"><div class="pv"></div>`, async () => {
+    <label>프로필 사진 (선택)</label><input type="file" id="fAv" accept="image/*"><div class="pv"></div>
+    <label>파비콘 · 브라우저 탭 아이콘 (선택)</label><input type="file" id="fFv" accept="image/*"><div class="pv"></div>`, async () => {
     const f = $('#fAv').files_data[0]; let av = p.avatar || '';
     if (f){ av = 'img/avatar.jpg?v=' + Date.now(); await putImg('img/avatar.jpg', await square(f, 300)); }
-    const v = {title:$('#pT').value, sub:F('pS'), name:F('pN'), handle:F('pH'), text:$('#pX').value.trim(), tags:F('pG').split(',').map(s=>s.trim()).filter(Boolean), avatar:av};
+    const fv = $('#fFv').files_data[0]; let ico = p.favicon || '';
+    if (fv){ ico = 'img/favicon.jpg?v=' + Date.now(); await putImg('img/favicon.jpg', await square(fv, 128)); }
+    const v = {favicon:ico, title:$('#pT').value, sub:F('pS'), name:F('pN'), handle:F('pH'), text:$('#pX').value.trim(), tags:F('pG').split(',').map(s=>s.trim()).filter(Boolean), avatar:av};
     await commit(d => { d.profile = Object.assign(d.profile||{}, v); }, 'Edit profile');
-  }), picker('fAv', p.avatar);
+  }), picker('fAv', p.avatar), picker('fFv', p.favicon);
 }
 function setModal(){
   const g = LS();
