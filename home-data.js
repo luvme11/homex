@@ -29,7 +29,7 @@ window.HOME_DATA = {
     {
      "label": "0.6",
      "url": "https://pixai.art/ko/model/2019812639073060605/2019823560092066559",
-     "weight": "0.6"
+     "weight": ""
     }
    ],
    "url": "",
@@ -40,5 +40,5 @@ window.HOME_DATA = {
    "img": "img/lora-mve3lpowilhg.jpg"
   }
  ],
- "updatedAt": 1792344807388
+ "updatedAt": 1792345152416
 };
