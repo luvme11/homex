@@ -9,6 +9,36 @@ window.HOME_DATA = {
   "tags": [],
   "avatar": "img/avatar.jpg?v=1792342276183"
  },
- "items": [],
- "updatedAt": 1792342691508
+ "items": [
+  {
+   "id": "mve3lriv3i32",
+   "at": 1792344443287,
+   "tab": "lora",
+   "name": "1",
+   "links": [
+    {
+     "label": ".",
+     "url": "https://pixai.art/ko/model/2056269388769777580/2056275405896791794",
+     "weight": "1.2"
+    },
+    {
+     "label": "Textured Painterly",
+     "url": "https://pixai.art/ko/model/2050779893027593883/2050822937141372931",
+     "weight": "1.0"
+    },
+    {
+     "label": "Caramel style",
+     "url": "https://pixai.art/ko/model/2019812639073060605/2019823560092066559",
+     "weight": "0.6"
+    }
+   ],
+   "url": "",
+   "weight": "",
+   "trigger": "",
+   "note": "",
+   "tags": [],
+   "img": "img/lora-mve3lpowilhg.jpg"
+  }
+ ],
+ "updatedAt": 1792344443287
 };
