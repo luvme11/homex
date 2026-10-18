@@ -154,7 +154,7 @@ function render(){
       ${(P.tags||[]).length ? `<div class="chips">${P.tags.map(g=>`<span class="tg">${esc(g)}</span>`).join('')}</div>` : ''}`;
     return;
   }
-  const q = Q.toLowerCase(), all = sortNew(ITEMS.filter(i=>i.tab===t.k && (OWNER || !i.hidden)));
+  const q = Q.toLowerCase(), all = (t.k==='lora' ? ITEMS.filter(i=>i.tab==='lora').sort((a,b)=>(a.at||0)-(b.at||0)) : sortNew(ITEMS.filter(i=>i.tab===t.k && (OWNER || !i.hidden))));
   const list = all.filter(p => !q || (('#'+(NUM[p.id]||''))+' '+[p.name,p.title,p.note,p.body,p.trigger,(p.tags||[]).join(' ')].join(' ')).toLowerCase().includes(q));
   const size = SIZE[t.k], pages = Math.max(1, Math.ceil(list.length/size));
   PG = Math.min(PG, pages);
