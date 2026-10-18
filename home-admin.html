@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Home Admin</title>
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -117,7 +118,7 @@ const resize = (f, m, q) => new Promise((res, rej) => { const im = new Image(); 
     res(c.toDataURL('image/jpeg', q||.85)); }; im.src = URL.createObjectURL(f); });
 const square = (f, s, png) => new Promise(res => { const im = new Image(); im.onload = () => {
   const m = Math.min(im.width, im.height), c = document.createElement('canvas'); c.width = c.height = s;
-  c.getContext('2d').drawImage(im, (im.width-m)/2, (im.height-m)/2, m, m, 0, 0, s, s);
+  const x = c.getContext('2d'); x.imageSmoothingQuality = 'high'; x.drawImage(im, (im.width-m)/2, (im.height-m)/2, m, m, 0, 0, s, s);
   res(png ? c.toDataURL('image/png') : c.toDataURL('image/jpeg', .85)); }; im.src = URL.createObjectURL(f); });
 
 function toast(t){ const e = $('#toast'); e.textContent = t; e.style.display = 'block'; setTimeout(()=>e.style.display='none', 1800); }
@@ -198,7 +199,7 @@ function proModal(){
     const f = $('#fAv').files_data[0]; let av = p.avatar || '';
     if (f){ av = 'img/avatar.png?v=' + Date.now(); await putImg('img/avatar.png', await square(f, 300, true)); }
     const fv = $('#fFv').files_data[0]; let ico = p.favicon || '';
-    if (fv){ ico = 'img/favicon.png?v=' + Date.now(); await putImg('img/favicon.png', await square(fv, 128, true)); }
+    if (fv){ ico = await square(fv, 64, true); }
     const v = {favicon:ico, title:$('#pT').value, sub:F('pS'), name:F('pN'), handle:F('pH'), text:$('#pX').value.trim(), tags:F('pG').split(',').map(s=>s.trim()).filter(Boolean), avatar:av};
     await commit(d => { d.profile = Object.assign(d.profile||{}, v); }, 'Edit profile');
   }), picker('fAv', p.avatar), picker('fFv', p.favicon);
@@ -215,7 +216,9 @@ function setModal(){
 }
 
 /* ---------- 목록 ---------- */
+const setIco = () => { const f = DATA.profile && DATA.profile.favicon; if (!f) return; let l = document.querySelector('link[rel~=icon]'); if (!l){ l = document.createElement('link'); l.rel = 'icon'; document.head.appendChild(l); } l.type = 'image/png'; l.href = f; };
 function render(){
+  setIco();
   document.querySelectorAll('.pill').forEach(b => b.classList.toggle('on', b.dataset.k === tab));
   const q = Q.toLowerCase(), all = DATA.items.filter(i => i.tab === tab).sort((a,b)=>(b.at||0)-(a.at||0));
   const list = all.filter(p => !q || [p.name,p.title,p.note,p.body,(p.tags||[]).join(' ')].join(' ').toLowerCase().includes(q));
