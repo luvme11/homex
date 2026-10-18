@@ -41,7 +41,7 @@ h1{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
 .md textarea{min-height:130px;resize:vertical;line-height:1.55}
 .md input:focus,.md textarea:focus{border-color:#2a2a2a}
 .pv{display:none;gap:6px;flex-wrap:wrap;margin-top:8px}.pv.on{display:flex}
-.pv img{width:64px;height:64px;border-radius:8px;object-fit:cover}
+.pv img{width:64px;height:64px;border-radius:8px;object-fit:cover;background:repeating-conic-gradient(#e6e6e6 0 25%,#fff 0 50%) 0 0/12px 12px}
 .mf{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-top:18px}.mf span{flex:1;font-size:10px;color:#888}
 .hint{font-size:10px;color:#999;line-height:1.6;margin-top:8px}
 .md label.ck{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:0;color:#444;margin:16px 0 0;cursor:pointer}
@@ -136,7 +136,7 @@ function picker(id, cur, fn){
   const box = $('#'+id), pv = box.nextElementSibling; box.files_data = [];
   const show = a => { pv.classList.toggle('on', a.length>0); pv.innerHTML = a.slice(0,30).map(s=>`<img src="${esc(s)}">`).join('') + (a.length>30?`<small>+${a.length-30}</small>`:''); };
   if (cur) show([cur]);
-  box.onchange = async () => { const fs = [...box.files]; box.files_data = fs; show(await Promise.all(fs.slice(0,30).map(f=>square(f,128)))); };
+  box.onchange = async () => { const fs = [...box.files]; box.files_data = fs; show(await Promise.all(fs.slice(0,30).map(f=>square(f,128,true)))); };
 }
 
 /* ---------- 올리기 ---------- */
