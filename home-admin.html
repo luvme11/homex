@@ -115,10 +115,10 @@ const resize = (f, m, q) => new Promise((res, rej) => { const im = new Image(); 
   im.onload = () => { const s = Math.min(1, m/Math.max(im.width, im.height)), c = document.createElement('canvas');
     c.width = Math.round(im.width*s); c.height = Math.round(im.height*s); c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
     res(c.toDataURL('image/jpeg', q||.85)); }; im.src = URL.createObjectURL(f); });
-const square = (f, s) => new Promise(res => { const im = new Image(); im.onload = () => {
+const square = (f, s, png) => new Promise(res => { const im = new Image(); im.onload = () => {
   const m = Math.min(im.width, im.height), c = document.createElement('canvas'); c.width = c.height = s;
   c.getContext('2d').drawImage(im, (im.width-m)/2, (im.height-m)/2, m, m, 0, 0, s, s);
-  res(c.toDataURL('image/jpeg', .85)); }; im.src = URL.createObjectURL(f); });
+  res(png ? c.toDataURL('image/png') : c.toDataURL('image/jpeg', .85)); }; im.src = URL.createObjectURL(f); });
 
 function toast(t){ const e = $('#toast'); e.textContent = t; e.style.display = 'block'; setTimeout(()=>e.style.display='none', 1800); }
 function modal(title, body, save){
@@ -198,9 +198,9 @@ function proModal(){
     <label>프로필 사진 (선택)</label><input type="file" id="fAv" accept="image/*"><div class="pv"></div>
     <label>파비콘 · 브라우저 탭 아이콘 (선택)</label><input type="file" id="fFv" accept="image/*"><div class="pv"></div>`, async () => {
     const f = $('#fAv').files_data[0]; let av = p.avatar || '';
-    if (f){ av = 'img/avatar.jpg?v=' + Date.now(); await putImg('img/avatar.jpg', await square(f, 300)); }
+    if (f){ av = 'img/avatar.png?v=' + Date.now(); await putImg('img/avatar.png', await square(f, 300, true)); }
     const fv = $('#fFv').files_data[0]; let ico = p.favicon || '';
-    if (fv){ ico = 'img/favicon.jpg?v=' + Date.now(); await putImg('img/favicon.jpg', await square(fv, 128)); }
+    if (fv){ ico = 'img/favicon.png?v=' + Date.now(); await putImg('img/favicon.png', await square(fv, 128, true)); }
     const v = {favicon:ico, title:$('#pT').value, sub:F('pS'), name:F('pN'), handle:F('pH'), text:$('#pX').value.trim(), tags:F('pG').split(',').map(s=>s.trim()).filter(Boolean), avatar:av};
     await commit(d => { d.profile = Object.assign(d.profile||{}, v); }, 'Edit profile');
   }), picker('fAv', p.avatar), picker('fFv', p.favicon);
