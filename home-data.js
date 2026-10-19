@@ -1384,7 +1384,21 @@ window.HOME_DATA = {
    "note": "",
    "tags": [],
    "img": "img/lora-mvf82vh9iqyc.jpg"
+  },
+  {
+   "id": "mvf83ma69r44",
+   "tab": "asset",
+   "at": 1792412471288,
+   "name": "",
+   "img": "img/asset-mvf83ma69r44-1.jpg",
+   "imgs": [
+    "img/asset-mvf83ma69r44-1.jpg",
+    "img/asset-mvf83ma69r44-2.jpg",
+    "img/asset-mvf83ma69r44-3.jpg",
+    "img/asset-mvf83ma69r44-4.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792412428889
+ "updatedAt": 1792412471288
 };
