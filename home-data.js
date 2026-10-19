@@ -1888,7 +1888,20 @@ window.HOME_DATA = {
     "img/asset-mvfj17zjpc5t-3.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfj2irhodui",
+   "tab": "asset",
+   "at": 1792430894325,
+   "name": "",
+   "img": "img/asset-mvfj2irhodui-1.jpg",
+   "imgs": [
+    "img/asset-mvfj2irhodui-1.jpg",
+    "img/asset-mvfj2irhodui-2.jpg",
+    "img/asset-mvfj2irhodui-3.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792430831647
+ "updatedAt": 1792430894325
 };
