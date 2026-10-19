@@ -418,7 +418,15 @@ window.HOME_DATA = {
    "note": "",
    "tags": [],
    "img": "img/lora-mvf5i5dmifpu.jpg"
+  },
+  {
+   "id": "mvf5lz4dmtxm",
+   "at": 1792408278541,
+   "tab": "post",
+   "title": "Pix ai 가입 관련",
+   "body": "https://temp-mail.io/ko/message/3528e29f-340a-4f89-a5cf-236b59744ce6\n⤷ 해당 사이트의 경우 ==ruutukf.com==로 시작되는 걸로 해야 Pix ai 이메일 인증이 가능함\n\nhttps://10minemail.com/ko/\n⤷ ==10분마다== 이메일이 변경 되는 사이트\n\nhttps://temp-mail.org/ko/view/6ad4cae47ccaace8f45af4a5\n⤷ ==일회용 임시 이메일== 사이트",
+   "img": ""
   }
  ],
- "updatedAt": 1792408129204
+ "updatedAt": 1792408278541
 };
