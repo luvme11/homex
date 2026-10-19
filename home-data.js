@@ -2178,7 +2178,19 @@ window.HOME_DATA = {
     "img/asset-mvfl9ncfxysy-2.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfleabq1719",
+   "tab": "asset",
+   "at": 1792434800048,
+   "name": "",
+   "img": "img/asset-mvfleabq1719-1.jpg",
+   "imgs": [
+    "img/asset-mvfleabq1719-1.jpg",
+    "img/asset-mvfleabq1719-2.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792434583597
+ "updatedAt": 1792434800048
 };
