@@ -2084,7 +2084,22 @@ window.HOME_DATA = {
     "img/asset-mvfkwlzyj7i7-3.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfkzjym1qqj",
+   "tab": "asset",
+   "at": 1792434119912,
+   "name": "",
+   "img": "img/asset-mvfkzjym1qqj-1.jpg",
+   "imgs": [
+    "img/asset-mvfkzjym1qqj-1.jpg",
+    "img/asset-mvfkzjym1qqj-2.jpg",
+    "img/asset-mvfkzjym1qqj-3.jpg",
+    "img/asset-mvfkzjym1qqj-4.jpg",
+    "img/asset-mvfkzjym1qqj-5.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792433977132
+ "updatedAt": 1792434119912
 };
