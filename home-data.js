@@ -2190,7 +2190,21 @@ window.HOME_DATA = {
     "img/asset-mvfleabq1719-2.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvflerjz7a90",
+   "tab": "asset",
+   "at": 1792434826335,
+   "name": "",
+   "img": "img/asset-mvflerjz7a90-1.jpg",
+   "imgs": [
+    "img/asset-mvflerjz7a90-1.jpg",
+    "img/asset-mvflerjz7a90-2.jpg",
+    "img/asset-mvflerjz7a90-3.jpg",
+    "img/asset-mvflerjz7a90-4.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792434800048
+ "updatedAt": 1792434826335
 };
