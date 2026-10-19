@@ -434,7 +434,15 @@ window.HOME_DATA = {
    "title": "이미지 관련",
    "body": "\nhttps://www.mergepictures.net/ko-KR\n⤷ 이미지를 가로/세로 합쳐 주는 사이트",
    "img": ""
+  },
+  {
+   "id": "mvf65nmifllf",
+   "at": 1792409196762,
+   "tab": "post",
+   "title": "우클릭 업스케일러",
+   "body": "https://drive.google.com/file/d/1QF6TJ2gyRVzFGT655-KC4fKEd23q_JiM/view\n\n==파일 압축 풀기 → release 폴더 → install.exe를 관리자 권한으로 실행 (다른 파일 위치 등 절대 건들지 말고 그대로 냅둘 것)==\n\n==1 입력 → 업스케일링 하고 싶은 이미지 파일 우클릭 혹은 여러 전체 파일 선택하고 우클릭 → 추가 옵션 표시 → AI 업스케일 x4(U) 클릭==",
+   "img": "img/post-mvf65lzjiy41.jpg"
   }
  ],
- "updatedAt": 1792408308372
+ "updatedAt": 1792409196762
 };
