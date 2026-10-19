@@ -67,7 +67,36 @@ window.HOME_DATA = {
    "note": "",
    "tags": [],
    "img": "img/lora-mve42e0s9j2t.jpg"
+  },
+  {
+   "id": "mvf5a9bjthuv",
+   "at": 1792407731887,
+   "tab": "lora",
+   "name": "",
+   "links": [
+    {
+     "label": "0.4",
+     "url": "https://pixai.art/ko/model/2056269388769777580",
+     "weight": ""
+    },
+    {
+     "label": "0.9",
+     "url": "https://pixai.art/ko/model/2056341103557508642?utm_source=copy_web",
+     "weight": ""
+    },
+    {
+     "label": "1.0",
+     "url": "https://pixai.art/ko/model/2056752254072910127",
+     "weight": ""
+    }
+   ],
+   "url": "",
+   "weight": "",
+   "trigger": "",
+   "note": "",
+   "tags": [],
+   "img": "img/lora-mvf5a71astpx.jpg"
   }
  ],
- "updatedAt": 1792345221466
+ "updatedAt": 1792407731887
 };
