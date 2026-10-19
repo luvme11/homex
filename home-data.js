@@ -1558,7 +1558,18 @@ window.HOME_DATA = {
     "img/asset-mvfgp97g5c9o-2.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfgpiyk60ql",
+   "tab": "asset",
+   "at": 1792426922681,
+   "name": "",
+   "img": "img/asset-mvfgpiyk60ql-1.jpg",
+   "imgs": [
+    "img/asset-mvfgpiyk60ql-1.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792426912964
+ "updatedAt": 1792426922681
 };
