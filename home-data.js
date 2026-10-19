@@ -346,7 +346,26 @@ window.HOME_DATA = {
    "note": "",
    "tags": [],
    "img": "img/lora-mvf5fyyxjcot.jpg"
+  },
+  {
+   "id": "mvf5g9unxel7",
+   "at": 1792408012511,
+   "tab": "lora",
+   "name": "",
+   "links": [
+    {
+     "label": "1.2",
+     "url": "https://pixai.art/ko/model/2065946881949730068/2065973633671563276",
+     "weight": ""
+    }
+   ],
+   "url": "",
+   "weight": "",
+   "trigger": "",
+   "note": "",
+   "tags": [],
+   "img": "img/lora-mvf5g873ufys.jpg"
   }
  ],
- "updatedAt": 1792408001656
+ "updatedAt": 1792408012511
 };
