@@ -138,7 +138,7 @@ window.HOME_DATA = {
    "trigger": "",
    "note": "https://pixai.art/ko/model/1866301651911423272/1914100716996750596",
    "tags": [],
-   "img": ""
+   "img": "img/lora-mvf5blbb45al.jpg"
   },
   {
    "id": "mvf5c9nxk29j",
@@ -420,5 +420,5 @@ window.HOME_DATA = {
    "img": "img/lora-mvf5i5dmifpu.jpg"
   }
  ],
- "updatedAt": 1792408102924
+ "updatedAt": 1792408129204
 };
