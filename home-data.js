@@ -1454,7 +1454,21 @@ window.HOME_DATA = {
     "img/asset-mvf8snbeik0n-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvf8szivwrzt",
+   "tab": "asset",
+   "at": 1792413654619,
+   "name": "",
+   "img": "img/asset-mvf8szivwrzt-1.jpg",
+   "imgs": [
+    "img/asset-mvf8szivwrzt-1.jpg",
+    "img/asset-mvf8szivwrzt-2.jpg",
+    "img/asset-mvf8szivwrzt-3.jpg",
+    "img/asset-mvf8szivwrzt-4.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792413637660
+ "updatedAt": 1792413654619
 };
