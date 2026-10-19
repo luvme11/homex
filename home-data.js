@@ -1791,7 +1791,19 @@ window.HOME_DATA = {
     "img/asset-mvfincw8olsj-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfirlyoc16u",
+   "tab": "asset",
+   "at": 1792430381715,
+   "name": "",
+   "img": "img/asset-mvfirlyoc16u-1.jpg",
+   "imgs": [
+    "img/asset-mvfirlyoc16u-1.jpg",
+    "img/asset-mvfirlyoc16u-2.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792430188516
+ "updatedAt": 1792430381715
 };
