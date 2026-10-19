@@ -56,6 +56,9 @@ main{display:grid;grid-template-columns:250px minmax(0,1fr);gap:64px;width:min(1
 .gd.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .gd.g2 .tl{aspect-ratio:16/9}
 .lt{position:absolute;bottom:42px;left:50%;transform:translateX(-50%);width:min(560px,90vw);font-size:12px;line-height:1.6;color:#eee;text-align:center;white-space:pre-wrap;word-break:break-word;display:none}
+.ab a{color:#2a2a2a;text-decoration:underline;text-underline-offset:2px;word-break:break-all}.ab a:hover{color:#000;background:#eee}
+.pt{margin-bottom:14px}.pt .sh{cursor:pointer;padding:6px 0}.pt .sh:hover h3{text-decoration:underline;text-underline-offset:3px}
+.cv{font-size:10px;color:#999;transition:transform .2s;margin-left:2px}.pt.on .cv{transform:rotate(180deg);color:#222}
 .dt{font-size:8px;letter-spacing:.2em;color:#999;margin:8px 0 0 33px}
 .empty{font-size:11px;color:#aaa;padding:30px 0;text-align:center}
 mark{background:#e6e6e6;color:inherit;border-radius:3px;padding:1px 3px}
@@ -109,6 +112,8 @@ mark{background:#e6e6e6;color:inherit;border-radius:3px;padding:1px 3px}
 const $ = s => document.querySelector(s), pad = n => String(n).padStart(2,'0');
 const esc = s => String(s==null?'':s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const hl = s => esc(s).replace(/==(.+?)==/g, '<mark>$1</mark>');
+/* 글 안의 http(s) 주소를 눌리는 링크로 바꿈 */
+const lk = s => hl(s).replace(/https?:\/\/(?:(?!&quot;|&gt;|&lt;)[^\s<])+/g, m => { const t = m.match(/[.,)\]!?:;]+$/), tail = t ? t[0] : '', u = tail ? m.slice(0, -tail.length) : m; return `<a href="${u}" target="_blank" rel="noopener">${u}</a>${tail}`; });
 const D = window.HOME_DATA || {}, ITEMS = D.items || [];
 const P = Object.assign({title:'My\nHome',sub:'LORA · BOARD · ASSETS',name:'',handle:'',avatar:'',text:'',tags:[]}, D.profile || {});
 const TABS = [{k:'intro',label:'소개'},{k:'lora',label:'로라'},{k:'post',label:'게시판'},{k:'asset',label:'에셋',grid:1}];
@@ -117,7 +122,7 @@ const SIZE = {lora:99999, post:6, asset:12};
 const OWNER = (() => { try{ const g = JSON.parse(localStorage.getItem('home_gh') || '{}'); return !!(g.owner && g.repo && g.token); }catch(e){ return false; } })();
 const NUM = {}; ITEMS.filter(i=>i.tab==='lora').sort((a,b)=>(a.at||0)-(b.at||0)).forEach((p,i)=>NUM[p.id]=i+1);
 const imgsOf = p => p.imgs && p.imgs.length ? p.imgs : (p.img ? [p.img] : []);
-let T = 0, Q = '', PG = 1;
+let T = 0, Q = '', PG = 1, OPEN = null;
 $('#title').innerHTML = P.title.split('\n').map(esc).join('<br>');
 $('#sub').textContent = P.sub; $('#nm').textContent = P.name; $('#hd').textContent = P.handle;
 if (P.avatar) $('#av').innerHTML = `<img src="${esc(P.avatar)}" alt="">`;
@@ -136,10 +141,8 @@ const combosOf = p => p.links && p.links.length ? p.links : (p.url||p.weight ? [
 const loraTile = p => { const cs = combosOf(p);
   return `<div><div class="tl" data-l="${esc(p.id)}">${p.img?`<img src="${esc(p.img)}" style="object-position:${esc(p.pos||'50% 50%')}" loading="lazy" alt="" onerror="this.remove()">`:''}</div><div class="cap">${p.name?hl(p.name):'#'+NUM[p.id]}</div><div class="cb">${cs.map((c,i)=>{ const t = [c.label, c.weight].filter(Boolean).join(' ') || 'LORA '+(i+1);
     return c.url ? `<a class="cp" href="${esc(c.url)}" target="_blank" rel="noopener">${esc(t)}</a>` : `<span class="cp no">${esc(t)}</span>`; }).join('')}</div></div>`; };
-const postRow = (p,n) => `<div class="it"><div class="sh"><em>${pad(n)}</em><h3>${hl(p.title||'제목 없음')}</h3><i></i><span>POST</span></div>
-  <div class="dt">${fmt(p.at)}</div>
-  ${p.img?`<img class="th" src="${esc(p.img)}" loading="lazy" alt="" onerror="this.remove()">`:''}
-  <div class="ab">${hl(p.body||'')}</div></div>`;
+const postRow = (p,n) => { const on = OPEN === p.id; return `<div class="it pt${on?' on':''}"><div class="sh" data-o="${esc(p.id)}"><em>${pad(n)}</em><h3>${hl(p.title||'제목 없음')}</h3><i></i><span>${fmt(p.at)}</span><span class="cv">▾</span></div>
+  ${on ? `${p.img?`<img class="th" src="${esc(p.img)}" loading="lazy" alt="" onerror="this.remove()">`:''}<div class="ab">${lk(p.body||'')}</div>` : ''}</div>`; };
 const tile = p => { const n = imgsOf(p).length; return `<div><div class="tl" data-s="${esc(p.id)}"><img src="${esc(imgsOf(p)[0]||'')}" loading="lazy" alt="" onerror="this.remove()">${p.hidden?'<div class="pv2">비공개</div>':''}${n>1?`<div class="bd">1 / ${n}</div>`:''}</div>${p.name?`<div class="cap">${esc(p.name)}</div>`:''}</div>`; };
 
 function render(){
@@ -150,7 +153,7 @@ function render(){
   $('.sr').style.display = intro ? 'none' : 'flex';
   if (intro){
     $('#body').innerHTML = `<div class="sh"><em>01</em><h3>ABOUT</h3><i></i><span>INTRO</span></div>
-      <div class="ab">${P.text ? hl(P.text) : '소개글을 관리자 페이지에서 적어 주세요.'}</div>
+      <div class="ab">${P.text ? lk(P.text) : '소개글을 관리자 페이지에서 적어 주세요.'}</div>
       ${(P.tags||[]).length ? `<div class="chips">${P.tags.map(g=>`<span class="tg">${esc(g)}</span>`).join('')}</div>` : ''}`;
     return;
   }
@@ -168,11 +171,13 @@ function render(){
 async function copy(txt){
   try{ await navigator.clipboard.writeText(txt); }catch(x){ const a=document.createElement('textarea'); a.value=txt; document.body.appendChild(a); a.select(); try{document.execCommand('copy')}catch(y){} a.remove(); }
 }
-$('#tabs').onclick = e => { const b = e.target.closest('[data-t]'); if(!b) return; T = +b.dataset.t; Q = ''; PG = 1; $('#q').value = ''; render(); $('#body').scrollTop = 0; };
+$('#tabs').onclick = e => { const b = e.target.closest('[data-t]'); if(!b) return; T = +b.dataset.t; Q = ''; PG = 1; OPEN = null; $('#q').value = ''; render(); $('#body').scrollTop = 0; };
 $('#q').oninput = e => { Q = e.target.value.trim(); PG = 1; render(); };
 $('#body').onclick = async e => {
   const p = e.target.closest('[data-p]');
   if (p && !p.disabled){ PG = +p.dataset.p; render(); $('#body').scrollTop = 0; window.scrollTo(0,0); return; }
+  const ob = e.target.closest('[data-o]');
+  if (ob){ const id = ob.dataset.o; OPEN = OPEN === id ? null : id; render(); const h = document.querySelector('[data-o="' + id + '"]'); if (h) h.scrollIntoView({block:'nearest'}); return; }
   const l = e.target.closest('[data-l]');
   if (l){ const it = ITEMS.find(x => x.id === l.dataset.l); if (it && it.img) openLb([it.img], 0, [it.trigger?'TRIGGER  '+it.trigger:'', it.note||''].filter(Boolean).join('\n\n')); return; }
   const z = e.target.closest('[data-s]');
