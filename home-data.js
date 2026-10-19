@@ -502,7 +502,20 @@ window.HOME_DATA = {
     "img/asset-mvf72xyncaby-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvf73ix2zafh",
+   "tab": "asset",
+   "at": 1792410784676,
+   "name": "",
+   "img": "img/asset-mvf73ix2zafh-1.jpg",
+   "imgs": [
+    "img/asset-mvf73ix2zafh-1.jpg",
+    "img/asset-mvf73ix2zafh-2.jpg",
+    "img/asset-mvf73ix2zafh-3.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792410759479
+ "updatedAt": 1792410784676
 };
