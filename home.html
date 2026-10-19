@@ -117,7 +117,7 @@ const lk = s => hl(s).replace(/https?:\/\/(?:(?!&quot;|&gt;|&lt;)[^\s<])+/g, m =
 const D = window.HOME_DATA || {}, ITEMS = D.items || [];
 const P = Object.assign({title:'My\nHome',sub:'LORA · BOARD · ASSETS',name:'',handle:'',avatar:'',text:'',tags:[]}, D.profile || {});
 const TABS = [{k:'intro',label:'소개'},{k:'lora',label:'로라'},{k:'post',label:'게시판'},{k:'asset',label:'에셋',grid:1}];
-const SIZE = {lora:99999, post:6, asset:12};
+const SIZE = {lora:99999, post:15, asset:12};
 /* 관리자(토큰이 저장된 브라우저)만 비공개 에셋을 볼 수 있음 */
 const OWNER = (() => { try{ const g = JSON.parse(localStorage.getItem('home_gh') || '{}'); return !!(g.owner && g.repo && g.token); }catch(e){ return false; } })();
 const NUM = {}; ITEMS.filter(i=>i.tab==='lora').sort((a,b)=>(a.at||0)-(b.at||0)).forEach((p,i)=>NUM[p.id]=i+1);
