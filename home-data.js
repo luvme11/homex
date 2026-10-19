@@ -474,7 +474,21 @@ window.HOME_DATA = {
    "title": "취향 사이트 2",
    "body": "카카오톡 메이커 https://seoihyeon.github.io/kakaotalk/ \n체키 메이커 https://seoihyeon.github.io/iloveryu/ \n애플 뮤직 플레이어 메이커 https://seoihyeon.github.io/24/ \n맥북 메이커 https://seoihyeon.github.io/kajiyama/ \n아이팟 메이커 https://seoihyeon.github.io/kajiyamaryu/ \n유튜브 메이커 https://seoihyeon.github.io/Jeongstella/ \n유튜브 코멘트 메이커 https://seoihyeon.github.io/stella/ \n아이메세지 메이커 https://seoihyeon.github.io/ryu/ \n애플뮤직 가사 화면 메이커 https://seoihyeon.github.io/ryukajiyama/ ",
    "img": ""
+  },
+  {
+   "id": "mvf6zz3usqoe",
+   "tab": "asset",
+   "at": 1792410621476,
+   "name": "",
+   "img": "img/asset-mvf6zz3usqoe-1.jpg",
+   "imgs": [
+    "img/asset-mvf6zz3usqoe-1.jpg",
+    "img/asset-mvf6zz3usqoe-2.jpg",
+    "img/asset-mvf6zz3usqoe-3.jpg",
+    "img/asset-mvf6zz3usqoe-4.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792409242954
+ "updatedAt": 1792410621476
 };
