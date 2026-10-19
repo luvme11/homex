@@ -571,7 +571,21 @@ window.HOME_DATA = {
     "img/asset-mvf79cdg7532-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvf79pa1h2b2",
+   "tab": "asset",
+   "at": 1792411075087,
+   "name": "",
+   "img": "img/asset-mvf79pa1h2b2-1.jpg",
+   "imgs": [
+    "img/asset-mvf79pa1h2b2-1.jpg",
+    "img/asset-mvf79pa1h2b2-2.jpg",
+    "img/asset-mvf79pa1h2b2-3.jpg",
+    "img/asset-mvf79pa1h2b2-4.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792411057844
+ "updatedAt": 1792411075087
 };
