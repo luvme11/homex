@@ -1532,7 +1532,21 @@ window.HOME_DATA = {
    "note": "",
    "tags": [],
    "img": "img/lora-mvfgfg6og9cx.jpg"
+  },
+  {
+   "id": "mvfgfp3zb21g",
+   "tab": "asset",
+   "at": 1792426471407,
+   "name": "",
+   "img": "img/asset-mvfgfp3zb21g-1.jpg",
+   "imgs": [
+    "img/asset-mvfgfp3zb21g-1.jpg",
+    "img/asset-mvfgfp3zb21g-2.jpg",
+    "img/asset-mvfgfp3zb21g-3.jpg",
+    "img/asset-mvfgfp3zb21g-4.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792426452339
+ "updatedAt": 1792426471407
 };
