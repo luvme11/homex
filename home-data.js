@@ -2416,7 +2416,20 @@ window.HOME_DATA = {
     "img/asset-mvfm25cg41kx-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfm39ebp65q",
+   "tab": "asset",
+   "at": 1792435968872,
+   "name": "",
+   "img": "img/asset-mvfm39ebp65q-1.jpg",
+   "imgs": [
+    "img/asset-mvfm39ebp65q-1.jpg",
+    "img/asset-mvfm39ebp65q-2.jpg",
+    "img/asset-mvfm39ebp65q-3.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792435916891
+ "updatedAt": 1792435968872
 };
