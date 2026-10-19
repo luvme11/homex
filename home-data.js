@@ -2032,7 +2032,20 @@ window.HOME_DATA = {
     "img/asset-mvfk1pahaeka-3.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfk5moq75im",
+   "tab": "asset",
+   "at": 1792432717727,
+   "name": "",
+   "img": "img/asset-mvfk5moq75im-1.jpg",
+   "imgs": [
+    "img/asset-mvfk5moq75im-1.jpg",
+    "img/asset-mvfk5moq75im-2.jpg",
+    "img/asset-mvfk5moq75im-3.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792432534437
+ "updatedAt": 1792432717727
 };
