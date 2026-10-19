@@ -450,7 +450,15 @@ window.HOME_DATA = {
    "title": "클로드 가입 관련",
    "body": "https://adguard.com/ko/adguard-temp-mail/overview.html \n⤷ 해당 사이트로 가입은 가능하나 ==정지가 될 가능성 多== 사용은 가능함",
    "img": ""
+  },
+  {
+   "id": "mvf668qgfl0x",
+   "at": 1792409224120,
+   "tab": "post",
+   "title": "발췌기",
+   "body": "윳! 채팅 발췌기 https://zznaptime.github.io/Chat2Img/ \n52 발췌기 https://mudoc087-rgb.github.io/quote-studio/ \n발췌기 https://excerpt.syzzy.xyz/ ",
+   "img": ""
   }
  ],
- "updatedAt": 1792409210913
+ "updatedAt": 1792409224120
 };
