@@ -442,7 +442,15 @@ window.HOME_DATA = {
    "title": "우클릭 업스케일러",
    "body": "https://drive.google.com/file/d/1QF6TJ2gyRVzFGT655-KC4fKEd23q_JiM/view\n\n==파일 압축 풀기 → release 폴더 → install.exe를 관리자 권한으로 실행 (다른 파일 위치 등 절대 건들지 말고 그대로 냅둘 것)==\n\n==1 입력 → 업스케일링 하고 싶은 이미지 파일 우클릭 혹은 여러 전체 파일 선택하고 우클릭 → 추가 옵션 표시 → AI 업스케일 x4(U) 클릭==",
    "img": "img/post-mvf65lzjiy41.jpg"
+  },
+  {
+   "id": "mvf65yjl8lr0",
+   "at": 1792409210913,
+   "tab": "post",
+   "title": "클로드 가입 관련",
+   "body": "https://adguard.com/ko/adguard-temp-mail/overview.html \n⤷ 해당 사이트로 가입은 가능하나 ==정지가 될 가능성 多== 사용은 가능함",
+   "img": ""
   }
  ],
- "updatedAt": 1792409196762
+ "updatedAt": 1792409210913
 };
