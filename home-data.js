@@ -458,7 +458,15 @@ window.HOME_DATA = {
    "title": "발췌기",
    "body": "윳! 채팅 발췌기 https://zznaptime.github.io/Chat2Img/ \n52 발췌기 https://mudoc087-rgb.github.io/quote-studio/ \n발췌기 https://excerpt.syzzy.xyz/ ",
    "img": ""
+  },
+  {
+   "id": "mvf66hp6sb17",
+   "at": 1792409235738,
+   "tab": "post",
+   "title": "취향 사이트 1",
+   "body": "윳! 아이돌 가챠 메이커 https://zznaptime.github.io/Gatcha/ \n콩닥 메신저 메이커 https://golden-trifle-cd10be.netlify.app/ \n단문 글 로그 https://dan0030.github.io/writeediter/ \nDlog https://on-dlog.xyz/ \nSNS 메이커 https://dearlovedive.github.io/cannya_maker/ \n타래 저장소 https://tarae-archiving.net/ \n페어틀/외관표/글로그 만들기 https://baegop157902.github.io/PairMaker/ \n미니홈피st 자기소개표 https://startling-nasturtium-ce74f9.netlify.app/ \ny2k 구버전 아이메세지 편집기 https://senluvy.github.io/jamitimessageediter/ \nWin99 페어틀 편집기 https://a3sth3tic5.github.io/pair_card_win98/ \nMac 페어틀 편집기 https://a3sth3tic5.github.io/pair_card_mac/ \n사진 사이버 파상풍 https://hiyameshi-retro-pack.web.app/apps/Heisei-VHS/ \n셀프 신청서 메이커 https://dreamdock.co/t/58950734-a17c-4346-b308-71ba56fd3cbc \n싸이월드 미니홈피 편집기 https://senluvy.github.io/jamitminihomeediter/ \n컴백 검열 테스트 이미지 https://comeback-umber.vercel.app/ \ny2k 폴더폰 문자 메시지 편집기 https://senluvy.github.io/jmaitmessage/ \n영화관 영수증 에디터 https://senluvy.github.io/jamitmoviereceipt/ \nmp3 플레이어 스킨 에디터 https://senluvy.github.io/jamitplaylistmaker/ \n서사 페어틀 에디터 툴 https://kxxcho.github.io/pairtimeline/ \n넷플릭스 페어틀 https://kxxcho.github.io/netfilx/ \n인스타 페어틀 https://kxxcho.github.io/instagram/ \n유튜브 페어틀 https://kxxcho.github.io/media/ \n카오모지 리스트 https://x.com/rixbony/status/2051470004990935453 ",
+   "img": ""
   }
  ],
- "updatedAt": 1792409224120
+ "updatedAt": 1792409235738
 };
