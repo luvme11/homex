@@ -2126,7 +2126,20 @@ window.HOME_DATA = {
     "img/asset-mvfl6jipqm10-3.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfl774w92q6",
+   "tab": "asset",
+   "at": 1792434470850,
+   "name": "",
+   "img": "img/asset-mvfl774w92q6-1.jpg",
+   "imgs": [
+    "img/asset-mvfl774w92q6-1.jpg",
+    "img/asset-mvfl774w92q6-2.jpg",
+    "img/asset-mvfl774w92q6-3.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792434440941
+ "updatedAt": 1792434470850
 };
