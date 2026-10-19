@@ -2005,7 +2005,21 @@ window.HOME_DATA = {
     "img/asset-mvfjqjzyr4tq-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfjvl41jcf7",
+   "tab": "asset",
+   "at": 1792432252575,
+   "name": "",
+   "img": "img/asset-mvfjvl41jcf7-1.jpg",
+   "imgs": [
+    "img/asset-mvfjvl41jcf7-1.jpg",
+    "img/asset-mvfjvl41jcf7-2.jpg",
+    "img/asset-mvfjvl41jcf7-3.jpg",
+    "img/asset-mvfjvl41jcf7-4.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792432017796
+ "updatedAt": 1792432252575
 };
