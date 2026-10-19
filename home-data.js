@@ -1516,7 +1516,7 @@ window.HOME_DATA = {
    "name": "",
    "links": [
     {
-     "label": "1.1",
+     "label": "1.1~1.2",
      "url": "https://pixai.art/ko/model/2068884195528098168/2068939096570284790",
      "weight": ""
     },
@@ -1650,5 +1650,5 @@ window.HOME_DATA = {
    "img": "img/lora-mvfgrocam72u.jpg"
   }
  ],
- "updatedAt": 1792427023121
+ "updatedAt": 1792427171479
 };
