@@ -1111,7 +1111,19 @@ window.HOME_DATA = {
     "img/asset-mvf7sulmmouz-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvf7t6a300sk",
+   "tab": "asset",
+   "at": 1792411978922,
+   "name": "",
+   "img": "img/asset-mvf7t6a300sk-1.jpg",
+   "imgs": [
+    "img/asset-mvf7t6a300sk-1.jpg",
+    "img/asset-mvf7t6a300sk-2.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792411967683
+ "updatedAt": 1792411978922
 };
