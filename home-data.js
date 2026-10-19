@@ -2019,7 +2019,20 @@ window.HOME_DATA = {
     "img/asset-mvfjvl41jcf7-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfk1pahaeka",
+   "tab": "asset",
+   "at": 1792432534437,
+   "name": "",
+   "img": "img/asset-mvfk1pahaeka-1.jpg",
+   "imgs": [
+    "img/asset-mvfk1pahaeka-1.jpg",
+    "img/asset-mvfk1pahaeka-2.jpg",
+    "img/asset-mvfk1pahaeka-3.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792432252575
+ "updatedAt": 1792432534437
 };
