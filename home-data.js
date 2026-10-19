@@ -1672,7 +1672,20 @@ window.HOME_DATA = {
     "img/asset-mvfhxvde9wm4-2.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfi0132g8ap",
+   "tab": "asset",
+   "at": 1792429096858,
+   "name": "",
+   "img": "img/asset-mvfi0132g8ap-1.jpg",
+   "imgs": [
+    "img/asset-mvfi0132g8ap-1.jpg",
+    "img/asset-mvfi0132g8ap-2.jpg",
+    "img/asset-mvfi0132g8ap-3.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792428994245
+ "updatedAt": 1792429096858
 };
