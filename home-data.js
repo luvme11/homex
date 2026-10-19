@@ -1942,7 +1942,19 @@ window.HOME_DATA = {
    "note": "",
    "tags": [],
    "img": "img/lora-mvfj765070b8.jpg"
+  },
+  {
+   "id": "mvfj7u9mh4ub",
+   "tab": "asset",
+   "at": 1792431138572,
+   "name": "",
+   "img": "img/asset-mvfj7u9mh4ub-1.jpg",
+   "imgs": [
+    "img/asset-mvfj7u9mh4ub-1.jpg",
+    "img/asset-mvfj7u9mh4ub-2.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792431104800
+ "updatedAt": 1792431138572
 };
