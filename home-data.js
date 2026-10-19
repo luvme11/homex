@@ -2059,7 +2059,19 @@ window.HOME_DATA = {
     "img/asset-mvfk8wwknedi-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfkiwjvp6gq",
+   "tab": "asset",
+   "at": 1792433335368,
+   "name": "",
+   "img": "img/asset-mvfkiwjvp6gq-1.jpg",
+   "imgs": [
+    "img/asset-mvfkiwjvp6gq-1.jpg",
+    "img/asset-mvfkiwjvp6gq-2.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792432872541
+ "updatedAt": 1792433335368
 };
