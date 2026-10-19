@@ -935,7 +935,20 @@ window.HOME_DATA = {
     "img/asset-mvf7o0k6va6y-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvf7ocxwicf9",
+   "tab": "asset",
+   "at": 1792411756392,
+   "name": "",
+   "img": "img/asset-mvf7ocxwicf9-1.jpg",
+   "imgs": [
+    "img/asset-mvf7ocxwicf9-1.jpg",
+    "img/asset-mvf7ocxwicf9-2.jpg",
+    "img/asset-mvf7ocxwicf9-3.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792411743524
+ "updatedAt": 1792411756392
 };
