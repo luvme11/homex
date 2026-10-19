@@ -1750,7 +1750,21 @@ window.HOME_DATA = {
     "img/asset-mvfiji8bnc39-3.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvfikmgeaxmm",
+   "tab": "asset",
+   "at": 1792430060253,
+   "name": "",
+   "img": "img/asset-mvfikmgeaxmm-1.jpg",
+   "imgs": [
+    "img/asset-mvfikmgeaxmm-1.jpg",
+    "img/asset-mvfikmgeaxmm-2.jpg",
+    "img/asset-mvfikmgeaxmm-3.jpg",
+    "img/asset-mvfikmgeaxmm-4.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792430006036
+ "updatedAt": 1792430060253
 };
