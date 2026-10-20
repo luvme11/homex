@@ -2652,7 +2652,20 @@ window.HOME_DATA = {
     "img/asset-mvgoc7k4nzd3-2.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvgocvinxpg3",
+   "tab": "asset",
+   "at": 1792500240870,
+   "name": "",
+   "img": "img/asset-mvgocvinxpg3-1.jpg",
+   "imgs": [
+    "img/asset-mvgocvinxpg3-1.jpg",
+    "img/asset-mvgocvinxpg3-2.jpg",
+    "img/asset-mvgocvinxpg3-3.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792500207385
+ "updatedAt": 1792500240870
 };
