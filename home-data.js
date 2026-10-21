@@ -2999,7 +2999,21 @@ window.HOME_DATA = {
     "img/asset-mvicomz1l7gj-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvicqm1l2z24",
+   "tab": "asset",
+   "at": 1792601662175,
+   "name": "",
+   "img": "img/asset-mvicqm1l2z24-1.jpg",
+   "imgs": [
+    "img/asset-mvicqm1l2z24-1.jpg",
+    "img/asset-mvicqm1l2z24-2.jpg",
+    "img/asset-mvicqm1l2z24-3.jpg",
+    "img/asset-mvicqm1l2z24-4.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792601569155
+ "updatedAt": 1792601662175
 };
