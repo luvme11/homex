@@ -2780,7 +2780,20 @@ window.HOME_DATA = {
     "img/asset-mvibft901taj-2.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvibic7v0o53",
+   "tab": "asset",
+   "at": 1792599596037,
+   "name": "",
+   "img": "img/asset-mvibic7v0o53-1.jpg",
+   "imgs": [
+    "img/asset-mvibic7v0o53-1.jpg",
+    "img/asset-mvibic7v0o53-2.jpg",
+    "img/asset-mvibic7v0o53-3.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792599475068
+ "updatedAt": 1792599596037
 };
