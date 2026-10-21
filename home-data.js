@@ -2703,7 +2703,19 @@ window.HOME_DATA = {
     "img/asset-mviay96nhnqp-3.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mviayy290edz",
+   "tab": "asset",
+   "at": 1792598685921,
+   "name": "",
+   "img": "img/asset-mviayy290edz-1.jpg",
+   "imgs": [
+    "img/asset-mviayy290edz-1.jpg",
+    "img/asset-mviayy290edz-2.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792598656648
+ "updatedAt": 1792598685921
 };
