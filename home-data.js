@@ -2868,7 +2868,18 @@ window.HOME_DATA = {
     "img/asset-mvichiaqy0zv-2.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvichwf1yxdw",
+   "tab": "asset",
+   "at": 1792601247392,
+   "name": "",
+   "img": "img/asset-mvichwf1yxdw-1.jpg",
+   "imgs": [
+    "img/asset-mvichwf1yxdw-1.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792601232185
+ "updatedAt": 1792601247392
 };
