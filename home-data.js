@@ -2971,7 +2971,21 @@ window.HOME_DATA = {
     "img/asset-mvicnakcdg8a-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvico542rqi5",
+   "tab": "asset",
+   "at": 1792601547310,
+   "name": "",
+   "img": "img/asset-mvico542rqi5-1.jpg",
+   "imgs": [
+    "img/asset-mvico542rqi5-1.jpg",
+    "img/asset-mvico542rqi5-2.jpg",
+    "img/asset-mvico542rqi5-3.jpg",
+    "img/asset-mvico542rqi5-4.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792601508079
+ "updatedAt": 1792601547310
 };
