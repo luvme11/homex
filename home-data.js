@@ -2768,7 +2768,19 @@ window.HOME_DATA = {
     "img/asset-mvibeb08doxb-4.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvibft901taj",
+   "tab": "asset",
+   "at": 1792599475068,
+   "name": "",
+   "img": "img/asset-mvibft901taj-1.jpg",
+   "imgs": [
+    "img/asset-mvibft901taj-1.jpg",
+    "img/asset-mvibft901taj-2.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792599408392
+ "updatedAt": 1792599475068
 };
