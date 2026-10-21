@@ -3026,7 +3026,36 @@ window.HOME_DATA = {
     "img/asset-mvics27sgytr-3.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mvihtc9qz5do",
+   "at": 1792610176094,
+   "tab": "lora",
+   "name": "",
+   "links": [
+    {
+     "label": "0.4",
+     "url": "https://pixai.art/ko/model/2068884195528098168",
+     "weight": ""
+    },
+    {
+     "label": "0.6",
+     "url": "https://pixai.art/ko/model/2065946881949730068",
+     "weight": ""
+    },
+    {
+     "label": "1.0",
+     "url": "https://pixai.art/ko/model/2056752254072910127",
+     "weight": ""
+    }
+   ],
+   "url": "",
+   "weight": "",
+   "trigger": "",
+   "note": "",
+   "tags": [],
+   "img": "img/lora-mvihta1tw0cx.jpg"
   }
  ],
- "updatedAt": 1792601728247
+ "updatedAt": 1792610176094
 };
