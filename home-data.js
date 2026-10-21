@@ -2677,7 +2677,20 @@ window.HOME_DATA = {
     "img/asset-mviaxhmsxm96-2.jpg"
    ],
    "hidden": false
+  },
+  {
+   "id": "mviaxy2n13ls",
+   "tab": "asset",
+   "at": 1792598641266,
+   "name": "",
+   "img": "img/asset-mviaxy2n13ls-1.jpg",
+   "imgs": [
+    "img/asset-mviaxy2n13ls-1.jpg",
+    "img/asset-mviaxy2n13ls-2.jpg",
+    "img/asset-mviaxy2n13ls-3.jpg"
+   ],
+   "hidden": false
   }
  ],
- "updatedAt": 1792598618566
+ "updatedAt": 1792598641266
 };
